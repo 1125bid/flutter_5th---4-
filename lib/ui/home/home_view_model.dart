@@ -12,6 +12,13 @@ class HomeViewModel extends Notifier<List<Book>> {
   }
 
   final bookRepository = BookRepository();
-  final getBooks = bookRepository.getBooks(text);
+  Future<List<Book>?> onSearch(String text) async {
+    final getBooks = await bookRepository.getBooks(text);
+    state = getBooks ?? [];
+  }
 }
+
 //3. 뷰모델 관리자 만들기
+final viewModelProvider = NotifierProvider<HomeViewModel, List<Book>>(() {
+  return HomeViewModel();
+});
