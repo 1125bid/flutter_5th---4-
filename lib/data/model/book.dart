@@ -1,19 +1,20 @@
-// "lastBuildDate": "Fri, 06 Dec 2024 20:11:30 +0900",
-// "total": 4263,
-// "start": 1,
-// "display": 10,
-// "items": [
-//   {
-//     "title": "Harry! (Gedichte)",
-//     "link": "https://search.shopping.naver.com/book/catalog/32524001879",
-//     "image": "https://shopping-phinf.pstatic.net/main_3252400/32524001879.20220522144716.jpg",
-//     "author": "",
-//     "discount": "21590",
-//     "publisher": "Books on Demand",
-//     "pubdate": "20210519",
-//     "isbn": "9783753499949",
-//     "description": "Liebe zieht sich wie ein roter Faden \ndurch unser Leben: \nLebens- und Liebesgedichte"
-//   },
+// {
+//   "lastBuildDate": "Sat, 07 Dec 2024 07:35:50 +0900",
+//   "total": 4263,
+//   "start": 1,
+//   "display": 10,
+//   "items": [
+//     {
+//       "title": "Harry! (Gedichte)",
+//       "link": "https://search.shopping.naver.com/book/catalog/32524001879",
+//       "image": "https://shopping-phinf.pstatic.net/main_3252400/32524001879.20220522144716.jpg",
+//       "author": "",
+//       "discount": "21590",
+//       "publisher": "Books on Demand",
+//       "pubdate": "20210519",
+//       "isbn": "9783753499949",
+//       "description": "Liebe zieht sich wie ein roter Faden \ndurch unser Leben: \nLebens- und Liebesgedichte"
+//     },
 
 class Book {
   String title;
@@ -28,14 +29,14 @@ class Book {
 
   Book({
     required this.title,
-    required this.link,
     required this.image,
     required this.author,
-    required this.discount,
-    required this.publisher,
-    required this.pubdate,
-    required this.isbn,
     required this.description,
+    required this.discount,
+    required this.isbn,
+    required this.link,
+    required this.pubdate,
+    required this.publisher,
   });
 
   Book.fromJson(Map<String, dynamic> map)
@@ -51,7 +52,7 @@ class Book {
           description: map['description'],
         );
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> tojson() {
     return {
       'title': title,
       'link': link,

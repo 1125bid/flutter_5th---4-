@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book_searching_app/ui/detail/detail_page.dart';
-import 'package:flutter_book_searching_app/ui/home/home_view_model.dart';
 
 class HomeBottomSheet extends StatelessWidget {
   @override
