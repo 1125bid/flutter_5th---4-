@@ -15,7 +15,7 @@ class BookRepository {
     );
     if (response.statusCode == 200) {
       final jsonList = jsonDecode(response.body);
-      final jsonMap = List.from(jsonList);
+      final jsonMap = List.from(jsonList['items']);
       final iterableList = jsonMap.map((e) {
         return Book.fromJson(e);
       });

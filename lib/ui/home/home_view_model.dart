@@ -15,6 +15,7 @@ class HomeViewModel extends Notifier<List<Book>> {
   Future<List<Book>?> onSearch(String text) async {
     final getBooks = await bookRepository.getBooks(text);
     state = getBooks ?? [];
+    // return state;
   }
 }
 

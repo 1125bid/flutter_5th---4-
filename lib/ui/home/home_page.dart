@@ -20,7 +20,7 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   void onSearch(String text) {
     final vm = ref.read(viewModelProvider.notifier);
-    state = text;
+    vm.onSearch(text);
   }
 
   @override
@@ -85,7 +85,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     },
                   );
                 },
-                child: Image.network(homestate));
+                child: Image.network(homestate[index].image));
           },
         ),
       ),
