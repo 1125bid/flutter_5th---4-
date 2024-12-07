@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book_searching_app/ui/home/home_view_model.dart';
 import 'package:flutter_book_searching_app/ui/widets/home_bottom_sheet.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomePage extends ConsumerStatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  ConsumerState<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _HomePageState extends State<HomePage> {
   TextEditingController textEditingController = TextEditingController();
 
   @override //재정의(추가기능)
@@ -18,15 +17,10 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.dispose();
   }
 
-  void onSearch(String text) {
-    final vm = ref.read(viewModelProvider.notifier);
-    vm.onSearch(text);
-  }
+  void onSearch(String text) {}
 
   @override
   Widget build(BuildContext context) {
-    final homestate = ref.watch(viewModelProvider);
-
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -68,7 +62,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         ),
         body: GridView.builder(
           padding: EdgeInsets.all(20),
-          itemCount: homestate.length,
+          itemCount: 10,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: 3 / 4,
@@ -85,7 +79,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     },
                   );
                 },
-                child: Image.network(homestate[index].image));
+                child: Image.network('[homestate[index].image]'));
           },
         ),
       ),
